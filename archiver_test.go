@@ -20,7 +20,10 @@ func TestDecoderJson(t *testing.T) {
 	}
 
 	var payloads []string
-	json.Unmarshal([]byte(dat), &payloads)
+	err = json.Unmarshal([]byte(dat), &payloads)
+	if err != nil {
+		log.Fatal(err)
+	}
 	for _, plistHex := range payloads {
 		plistBytes, _ := hex.DecodeString(plistHex)
 		_, err := archiver.Unarchive(plistBytes)
