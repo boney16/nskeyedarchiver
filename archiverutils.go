@@ -2,9 +2,6 @@ package nskeyedarchiver
 
 import (
 	"bytes"
-	"encoding/json"
-	"fmt"
-	"log"
 
 	plist "howett.net/plist"
 )
